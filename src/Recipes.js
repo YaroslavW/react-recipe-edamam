@@ -1,8 +1,9 @@
 import React from 'react';
+import style from './recipe.module.css';
 
 const Recipes = ({ title, calories, image, ingredients }) => {
   return (
-    <div>
+    <div className={style.recipe}>
       <h1>{title}</h1>
       <p>{calories}</p>
       <ol>
@@ -10,7 +11,7 @@ const Recipes = ({ title, calories, image, ingredients }) => {
           <li key={index}>{ingredient.text}</li>
         ))}
       </ol>
-      <img src={image} alt="" />
+      <img className={style.img} src={image} alt="" />
     </div>
   );
 };
