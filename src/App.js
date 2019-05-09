@@ -30,15 +30,16 @@ const updateSearch = e => {
 const getSearch = e => {
   e.preventDefault();
   setQuery(search);
+  setSearch('');
 }
   return (
     <div className="App">
       <form onSubmit={getSearch} className="search-form">
-        <input 
-        className="search-bar" 
-        value={search} 
-        type="text" 
-        onChange={updateSearch}
+        <input
+          className="search-bar"
+          value={search}
+          type="text"
+          onChange={updateSearch}
         />
         <button className="search-button" type="submit">
           Search
@@ -50,6 +51,7 @@ const getSearch = e => {
           title={recipe.recipe.label}
           calories={recipe.recipe.calories}
           image={recipe.recipe.image}
+          ingredients={recipe.recipe.ingredients}
         />
       ))}
     </div>
